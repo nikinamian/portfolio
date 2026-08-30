@@ -318,7 +318,7 @@ function AboutSection() {
           <Heart size={16} className="text-pink-500" /> Life Outside the IDE
         </h3>
         <p className="text-slate-600 text-xs leading-relaxed mb-8">
-          Outside of coding, I love baking multi-layered cakes, playing pickleball, and hunting down independent coffee shops to craft my own iced lattes! Here are a few snapshots from my world:
+          Outside of coding, I love baking, playing pickleball, and going on long walks! Here are a few snapshots from my world:
         </p>
 
         {/* Polaroid Grid */}
@@ -329,7 +329,7 @@ function AboutSection() {
             <div className="w-full h-36 bg-slate-100 rounded overflow-hidden mb-3">
               <img src="/IMG_4343.jpg" alt="Playing Pickleball" className="w-full h-full object-cover" />
             </div>
-            <p className="text-center font-handwriting text-xs text-slate-700 font-semibold">🎾 Pickleball matches</p>
+            <p className="text-center text-xs text-slate-700 font-semibold">🎾 Pickleball tournaments</p>
           </div>
 
           {/* Polaroid 2: Baking */}
@@ -337,7 +337,7 @@ function AboutSection() {
             <div className="w-full h-36 bg-slate-100 rounded overflow-hidden mb-3">
               <img src="/IMG_8180.jpg" alt="Fresh Strawberry Cake" className="w-full h-full object-cover" />
             </div>
-            <p className="text-center font-handwriting text-xs text-slate-700 font-semibold">🍰 Professional baking</p>
+            <p className="text-center text-xs text-slate-700 font-semibold">🍰 Baking</p>
           </div>
 
           {/* Polaroid 3: Mission Control */}
@@ -345,7 +345,7 @@ function AboutSection() {
             <div className="w-full h-36 bg-slate-100 rounded overflow-hidden mb-3">
               <img src="/IMG_6298.jpg" alt="NASA JPL Mission Control" className="w-full h-full object-cover" />
             </div>
-            <p className="text-center font-handwriting text-xs text-slate-700 font-semibold">🚀 NASA JPL Intern</p>
+            <p className="text-center text-xs text-slate-700 font-semibold">🚀 NASA JPL Mission Control</p>
           </div>
 
           {/* Polaroid 4: Astronaut selfie */}
@@ -353,7 +353,7 @@ function AboutSection() {
             <div className="w-full h-36 bg-slate-100 rounded overflow-hidden mb-3">
               <img src="/IMG_6385.jpg" alt="At NASA JPL" className="w-full h-full object-cover" />
             </div>
-            <p className="text-center font-handwriting text-xs text-slate-700 font-semibold">⭐ Meeting astronauts</p>
+            <p className="text-center text-xs text-slate-700 font-semibold">⭐ Meeting astronauts</p>
           </div>
 
         </div>
