@@ -12,7 +12,8 @@ import {
   Users,
   ArrowRight,
   ArrowLeft,
-  Coffee
+  Coffee,
+  Heart
 } from "lucide-react";
 
 export default function Page() {
@@ -290,6 +291,7 @@ function AboutSection() {
 
   return (
     <div className="space-y-5">
+      {/* Intro Card */}
       <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white shadow-sm">
         <h2 className="text-xl md:text-2xl font-bold text-slate-800 mb-3 leading-snug">
           Hi, I&apos;m Niki! Welcome to my portfolio.
@@ -297,7 +299,7 @@ function AboutSection() {
         <p className="text-slate-600 text-sm leading-relaxed mb-3">
           Born and raised in Los Angeles, I&apos;m currently studying Computer Science at <strong>UC Berkeley</strong>. I recently completed my second internship at <strong>NASA JPL</strong>, where I integrated machine learning and LLMs into the Deep Space Network to optimize complex scheduling workflows and reduce manual overhead.
         </p>
-        <p className="text-slate-600 text-sm leading-relaxed mb-5">
+        <p className="text-slate-600 text-sm leading-relaxed mb-4">
           I love building scalable architectures and applying AI to real-world infrastructure to make critical systems faster and more efficient. Feel free to explore my latest <strong>projects</strong>, check out my <strong>work experience</strong>, or view my links above!
         </p>
         <div className="flex flex-wrap gap-2">
@@ -310,17 +312,79 @@ function AboutSection() {
         </div>
       </div>
 
+      {/* POLAROID PHOTO COLLAGE & PERSONAL LIFE */}
+      <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white shadow-sm">
+        <h3 className="text-base font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <Heart size={16} className="text-pink-500" /> Life Outside the IDE
+        </h3>
+        <p className="text-slate-600 text-xs leading-relaxed mb-8">
+          Outside of coding, I love baking multi-layered cakes, playing pickleball, and hunting down independent coffee shops to craft my own iced lattes! Here are a few snapshots from my world:
+        </p>
+
+        {/* Polaroid Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 pt-2">
+          
+          {/* Polaroid 1: Pickleball */}
+          <div className="bg-white p-3 pb-6 rounded shadow-md border border-slate-100 transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300">
+            <div className="w-full h-36 bg-slate-100 rounded overflow-hidden mb-3">
+              <img src="/IMG_4343.jpg" alt="Playing Pickleball" className="w-full h-full object-cover" />
+            </div>
+            <p className="text-center font-handwriting text-xs text-slate-700 font-semibold">🎾 Pickleball matches</p>
+          </div>
+
+          {/* Polaroid 2: Baking */}
+          <div className="bg-white p-3 pb-6 rounded shadow-md border border-slate-100 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300">
+            <div className="w-full h-36 bg-slate-100 rounded overflow-hidden mb-3">
+              <img src="/IMG_8180.jpg" alt="Fresh Strawberry Cake" className="w-full h-full object-cover" />
+            </div>
+            <p className="text-center font-handwriting text-xs text-slate-700 font-semibold">🍰 Professional baking</p>
+          </div>
+
+          {/* Polaroid 3: Mission Control */}
+          <div className="bg-white p-3 pb-6 rounded shadow-md border border-slate-100 transform -rotate-1 hover:rotate-0 hover:scale-105 transition duration-300">
+            <div className="w-full h-36 bg-slate-100 rounded overflow-hidden mb-3">
+              <img src="/IMG_6298.jpg" alt="NASA JPL Mission Control" className="w-full h-full object-cover" />
+            </div>
+            <p className="text-center font-handwriting text-xs text-slate-700 font-semibold">🚀 NASA JPL Intern</p>
+          </div>
+
+          {/* Polaroid 4: Astronaut selfie */}
+          <div className="bg-white p-3 pb-6 rounded shadow-md border border-slate-100 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300">
+            <div className="w-full h-36 bg-slate-100 rounded overflow-hidden mb-3">
+              <img src="/IMG_6385.jpg" alt="At NASA JPL" className="w-full h-full object-cover" />
+            </div>
+            <p className="text-center font-handwriting text-xs text-slate-700 font-semibold">⭐ Meeting astronauts</p>
+          </div>
+
+        </div>
+      </div>
+
+      {/* TECHNICAL SKILLS BREW (COFFEE MUGS) */}
       <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white shadow-sm overflow-hidden">
-        <h3 className="text-base font-bold text-slate-800 mb-6 flex items-center gap-2">
+        <h3 className="text-base font-bold text-slate-800 mb-8 flex items-center gap-2">
           <Coffee size={16} className="text-[#D97706]" /> Technical Skills Brew
         </h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 mt-8 pb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-4 pb-6 mt-4">
           {skillCategories.map((category) => (
-            <div key={category.id} className="flex flex-col items-center justify-end h-full">
+            <div key={category.id} className="flex flex-col items-center justify-end h-full relative">
               
-              {/* Steaming Skills Floating Above Cup */}
-              <div className="flex flex-wrap justify-center content-end gap-1.5 mb-6 px-1 z-20 min-h-[140px]">
+              {/* Steaming Skills & SVG Vapor */}
+              <div className="relative flex flex-wrap justify-center content-end gap-1.5 z-30 min-h-[160px] pb-4 px-2 w-full">
+                
+                {/* Wavy Steam Lines Background */}
+                <div className="absolute bottom-4 left-0 w-full h-full flex justify-evenly items-end px-4 z-0 opacity-40">
+                  {[0, 1, 2].map((i) => (
+                    <motion.svg key={i} width="16" height="80" viewBox="0 0 16 80" className="text-slate-300"
+                      animate={{ y: [0, -15, 0], opacity: [0.3, 0.8, 0.3] }}
+                      transition={{ duration: 3.5, repeat: Infinity, delay: i * 0.8, ease: "easeInOut" }}
+                    >
+                      <path d="M8 80 Q 16 60 8 40 T 8 0" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" />
+                    </motion.svg>
+                  ))}
+                </div>
+
+                {/* Floating Skill Pills */}
                 {category.skills.map((skill, i) => (
                   <motion.span
                     key={skill}
@@ -331,21 +395,30 @@ function AboutSection() {
                       delay: i * 0.25, 
                       ease: "easeInOut" 
                     }}
-                    className={`px-2 py-1 text-[10px] font-bold rounded-full border ${category.pillBg} ${category.pillText} ${category.pillBorder} shadow-sm`}
+                    className={`relative z-10 px-2.5 py-1 text-[11px] font-bold rounded-full border ${category.pillBg} ${category.pillText} ${category.pillBorder} shadow-sm backdrop-blur-sm`}
                   >
                     {skill}
                   </motion.span>
                 ))}
               </div>
 
-              {/* The Coffee Mug Base */}
-              <div className="relative mt-auto">
-                <div className={`w-28 h-20 rounded-b-2xl rounded-t-sm ${category.cupColor} border-[3px] border-white shadow-sm relative z-10 flex items-center justify-center`}>
-                   <div className="absolute top-0 left-0 w-full h-1 bg-black/5 rounded-t-sm" />
-                   <span className="text-[11px] font-black text-slate-700/50 uppercase tracking-widest text-center px-2">{category.title}</span>
+              {/* The Coffee Cup */}
+              <div className="relative z-20 drop-shadow-md">
+                
+                {/* Cup Handle */}
+                <div className={`absolute top-4 -right-4 w-10 h-16 rounded-r-full border-[5px] border-l-0 border-white ${category.cupColor} z-0`} />
+                
+                {/* Cup Body */}
+                <div className={`relative w-36 h-28 rounded-b-3xl ${category.cupColor} border-[5px] border-t-0 border-white z-10 flex items-end justify-center pb-6`}>
+                   <span className="text-xs font-black text-slate-700/50 uppercase tracking-widest text-center px-2">{category.title}</span>
                 </div>
-                {/* Mug Handle */}
-                <div className={`absolute top-3 -right-4 w-6 h-10 rounded-r-xl border-[4px] border-l-0 border-white ${category.cupColor} shadow-sm z-0`} />
+
+                {/* Cup Rim & Brown Coffee Liquid */}
+                <div className="absolute -top-3 left-0 w-36 h-8 bg-[#4A2F1D] rounded-[50%] border-[5px] border-white z-20 flex items-center justify-center shadow-inner overflow-hidden">
+                    {/* Subtle white reflection on the coffee surface */}
+                    <div className="absolute top-1.5 left-2 w-16 h-1 bg-white/15 rounded-full rotate-[-4deg]" />
+                </div>
+
               </div>
 
             </div>
