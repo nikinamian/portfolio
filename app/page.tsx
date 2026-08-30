@@ -300,7 +300,7 @@ function AboutSection() {
           Born and raised in Los Angeles, I&apos;m currently studying Computer Science at <strong>UC Berkeley</strong>. I recently completed my second internship at <strong>NASA JPL</strong>, where I integrated machine learning and LLMs into the Deep Space Network to optimize complex scheduling workflows and reduce manual overhead.
         </p>
         <p className="text-slate-600 text-sm leading-relaxed mb-4">
-          I love building scalable architectures and applying AI to real-world infrastructure to make critical systems faster and more efficient. Feel free to explore my latest <strong>projects</strong>, check out my <strong>work experience</strong>, or view my links above!
+          I love building scalable architectures and applying AI to real-world infrastructure to make critical systems faster and more efficient. Feel free to explore my latest <strong>projects</strong> and check out my <strong>work experience</strong>!
         </p>
         <div className="flex flex-wrap gap-2">
           <span className="px-3 py-1 bg-white border border-slate-100 rounded-lg text-[11px] font-semibold text-slate-600 flex items-center gap-1.5 shadow-sm">
@@ -318,7 +318,7 @@ function AboutSection() {
           <Heart size={16} className="text-pink-500" /> Life Outside the IDE
         </h3>
         <p className="text-slate-600 text-xs leading-relaxed mb-8">
-          Outside of coding, I love baking, playing pickleball, and going on long walks! Here are a few snapshots from my world:
+          Outside of coding, I love baking, playing pickleball, and going on long walks! I also love trying new coffee shops with friends and family or making my own iced lattes! Here are a few snapshots from my world:
         </p>
 
         {/* Polaroid Grid */}
@@ -362,7 +362,7 @@ function AboutSection() {
       {/* TECHNICAL SKILLS BREW (COFFEE MUGS) */}
       <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white shadow-sm overflow-hidden">
         <h3 className="text-base font-bold text-slate-800 mb-8 flex items-center gap-2">
-          <Coffee size={16} className="text-[#D97706]" /> Technical Skills Brew
+          <Coffee size={16} className="text-[#D97706]" /> Technical Skills
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-4 pb-6 mt-4">
