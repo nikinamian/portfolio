@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Niki Namian Portfolio",
   description: "Computer Science Student @ UC Berkeley | 2x ML/SWE Intern @ NASA JPL",
+  icons: {
+    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="45">💻☕</text></svg>',
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
