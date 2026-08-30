@@ -4,15 +4,15 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Terminal, 
-  MapPin,  
+  MapPin, 
   Sparkles, 
   GraduationCap, 
   ExternalLink, 
   RotateCcw,
-  BookOpen,
   Users,
   ArrowRight,
-  ArrowLeft
+  ArrowLeft,
+  Coffee
 } from "lucide-react";
 
 export default function Page() {
@@ -102,18 +102,15 @@ export default function Page() {
                   </svg>
                 </a>
                 <a
-                href="https://github.com/nikinamian"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 bg-white/80 border border-slate-200/80 hover:border-pink-300 text-slate-600 hover:text-pink-500 rounded-lg transition shadow-sm flex items-center justify-center"
-              >
-                <svg 
-                  className="w-3.5 h-3.5 fill-current" 
-                  viewBox="0 0 24 24"
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2 bg-white/80 border border-slate-200/80 hover:border-pink-300 text-slate-600 hover:text-pink-500 rounded-lg transition shadow-sm flex items-center justify-center"
                 >
-                  <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" />
-                </svg>
-              </a>
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" />
+                  </svg>
+                </a>
               </div>
             </header>
 
@@ -261,6 +258,36 @@ function TerminalScreen({ onComplete }: { onComplete: () => void }) {
 // 2. ABOUT ME
 // ==========================================
 function AboutSection() {
+  const skillCategories = [
+    {
+      id: "languages",
+      title: "Languages",
+      cupColor: "bg-pink-100",
+      pillBg: "bg-white",
+      pillText: "text-pink-600",
+      pillBorder: "border-pink-200",
+      skills: ["Python", "C++", "Java", "C", "C#", "JavaScript", "SQL", "HTML/CSS", "Assembly"]
+    },
+    {
+      id: "ai",
+      title: "AI & Data",
+      cupColor: "bg-sky-100",
+      pillBg: "bg-white",
+      pillText: "text-sky-600",
+      pillBorder: "border-sky-200",
+      skills: ["LLMs", "Computer Vision", "Sentiment Analysis", "Random Forests", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "RLHF", "GNNs", "Linear Regression", "NLP"]
+    },
+    {
+      id: "tools",
+      title: "Tools",
+      cupColor: "bg-amber-100",
+      pillBg: "bg-white",
+      pillText: "text-amber-600",
+      pillBorder: "border-amber-200",
+      skills: ["GitHub Actions", "Docker", "Azure/Fabric", "Streamlit", "VS Code", "REST APIs", "MongoDB"]
+    }
+  ];
+
   return (
     <div className="space-y-5">
       <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white shadow-sm">
@@ -271,7 +298,7 @@ function AboutSection() {
           Born and raised in Los Angeles, I&apos;m currently studying Computer Science at <strong>UC Berkeley</strong>. I recently completed my second internship at <strong>NASA JPL</strong>, where I integrated machine learning and LLMs into the Deep Space Network to optimize complex scheduling workflows and reduce manual overhead.
         </p>
         <p className="text-slate-600 text-sm leading-relaxed mb-5">
-          I love building scalable architectures and applying AI to real-world infrastructure to make critical systems faster and more efficient. Feel free to explore my latest <strong>projects</strong> and check out my <strong>work experience</strong>!
+          I love building scalable architectures and applying AI to real-world infrastructure to make critical systems faster and more efficient. Feel free to explore my latest <strong>projects</strong>, check out my <strong>work experience</strong>, or view my links above!
         </p>
         <div className="flex flex-wrap gap-2">
           <span className="px-3 py-1 bg-white border border-slate-100 rounded-lg text-[11px] font-semibold text-slate-600 flex items-center gap-1.5 shadow-sm">
@@ -283,23 +310,46 @@ function AboutSection() {
         </div>
       </div>
 
-      <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white shadow-sm">
-        <h3 className="text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
-          <BookOpen size={16} className="text-[#38BDF8]" /> Technical Skills
+      <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white shadow-sm overflow-hidden">
+        <h3 className="text-base font-bold text-slate-800 mb-6 flex items-center gap-2">
+          <Coffee size={16} className="text-[#D97706]" /> Technical Skills Brew
         </h3>
-        <div className="space-y-2 text-xs">
-          <div>
-            <span className="font-semibold text-slate-700">Languages: </span>
-            <span className="text-slate-600">Python, C++, Java, C, C#, JavaScript, SQL, HTML/CSS, Assembly</span>
-          </div>
-          <div>
-            <span className="font-semibold text-slate-700">AI, ML &amp; Data: </span>
-            <span className="text-slate-600">Large Language Models, Computer Vision, Sentiment Analysis, Random Forests, Scikit-learn, Pandas, NumPy, Matplotlib, Reinforcement Learning from Human Feedback (RLHF), Graph Neural Networks (GNNs), Linear Regression, Natural Language Processing (NLP)</span>
-          </div>
-          <div>
-            <span className="font-semibold text-slate-700">Tools: </span>
-            <span className="text-slate-600">GitHub Actions (CI/CD unit testing), Docker, Azure/Fabric, Streamlit, VS Code/Xcode, REST/AI APIs, MongoDB</span>
-          </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 mt-8 pb-4">
+          {skillCategories.map((category) => (
+            <div key={category.id} className="flex flex-col items-center justify-end h-full">
+              
+              {/* Steaming Skills Floating Above Cup */}
+              <div className="flex flex-wrap justify-center content-end gap-1.5 mb-6 px-1 z-20 min-h-[140px]">
+                {category.skills.map((skill, i) => (
+                  <motion.span
+                    key={skill}
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ 
+                      duration: 4, 
+                      repeat: Infinity, 
+                      delay: i * 0.25, 
+                      ease: "easeInOut" 
+                    }}
+                    className={`px-2 py-1 text-[10px] font-bold rounded-full border ${category.pillBg} ${category.pillText} ${category.pillBorder} shadow-sm`}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+
+              {/* The Coffee Mug Base */}
+              <div className="relative mt-auto">
+                <div className={`w-28 h-20 rounded-b-2xl rounded-t-sm ${category.cupColor} border-[3px] border-white shadow-sm relative z-10 flex items-center justify-center`}>
+                   <div className="absolute top-0 left-0 w-full h-1 bg-black/5 rounded-t-sm" />
+                   <span className="text-[11px] font-black text-slate-700/50 uppercase tracking-widest text-center px-2">{category.title}</span>
+                </div>
+                {/* Mug Handle */}
+                <div className={`absolute top-3 -right-4 w-6 h-10 rounded-r-xl border-[4px] border-l-0 border-white ${category.cupColor} shadow-sm z-0`} />
+              </div>
+
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -339,7 +389,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "lensai" |
             onClick={() => onSelectProject("lensai")}
             className="w-full py-2.5 bg-sky-50 hover:bg-sky-100 text-sky-600 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-sky-100"
           >
-            Read More/Try it Out! <ArrowRight size={14} />
+            Read Case Study <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -370,7 +420,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "lensai" |
             onClick={() => onSelectProject("tickertalk")}
             className="w-full py-2.5 bg-[#FBBF24]/15 hover:bg-[#FBBF24]/25 text-[#D97706] rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-[#FBBF24]/30"
           >
-            Read More/Try it Out! <ArrowRight size={14} />
+            Read Case Study <ArrowRight size={14} />
           </button>
         </div>
       </div>
