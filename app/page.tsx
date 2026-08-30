@@ -103,7 +103,7 @@ export default function Page() {
                   </svg>
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/nikinamian"
                   target="_blank"
                   rel="noreferrer"
                   className="p-2 bg-white/80 border border-slate-200/80 hover:border-pink-300 text-slate-600 hover:text-pink-500 rounded-lg transition shadow-sm flex items-center justify-center"
