@@ -263,29 +263,26 @@ function AboutSection() {
     {
       id: "languages",
       title: "Languages",
-      cupColor: "bg-pink-100",
-      pillBg: "bg-white",
-      pillText: "text-pink-600",
-      pillBorder: "border-pink-200",
+      badgeText: "bg-[#4A2810] text-amber-100",
       skills: ["Python", "C++", "Java", "C", "C#", "JavaScript", "SQL", "HTML/CSS", "Assembly"]
     },
     {
       id: "ai",
-      title: "AI & Data",
-      cupColor: "bg-sky-100",
-      pillBg: "bg-white",
-      pillText: "text-sky-600",
-      pillBorder: "border-sky-200",
+      title: "AI, ML, & Data",
+      badgeText: "bg-[#3D220F] text-amber-100",
       skills: ["LLMs", "Computer Vision", "Sentiment Analysis", "Random Forests", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "RLHF", "GNNs", "Linear Regression", "NLP"]
     },
     {
       id: "tools",
       title: "Tools",
-      cupColor: "bg-amber-100",
-      pillBg: "bg-white",
-      pillText: "text-amber-600",
-      pillBorder: "border-amber-200",
+      badgeText: "bg-[#4A2810] text-amber-100",
       skills: ["GitHub Actions", "Docker", "Azure/Fabric", "Streamlit", "VS Code", "REST APIs", "MongoDB"]
+    },
+    {
+      id: "competencies",
+      title: "Competencies",
+      badgeText: "bg-[#3D220F] text-amber-100",
+      skills: ["DSA", "OOP", "Web Dev", "Debugging", "System Architecture", "GPU Computing", "Auth & Security"]
     }
   ];
 
@@ -359,64 +356,108 @@ function AboutSection() {
         </div>
       </div>
 
-      {/* TECHNICAL SKILLS BREW (COFFEE MUGS) */}
-      <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white shadow-sm overflow-hidden">
-        <h3 className="text-base font-bold text-slate-800 mb-8 flex items-center gap-2">
-          <Coffee size={16} className="text-[#D97706]" /> Technical Skills
-        </h3>
+      {/* COZY ANIMATED CAFE SKILLS BREW */}
+      <div className="relative rounded-3xl p-6 md:p-8 border border-amber-200/70 shadow-sm overflow-hidden bg-gradient-to-b from-[#FDF8F3] via-[#FAF1E6] to-[#F5E6D3]">
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-4 pb-6 mt-4">
+        {/* Animated Cafe Ambient Background Elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Cafe String Lights */}
+          <div className="absolute top-2 left-0 right-0 flex justify-around px-4 opacity-75">
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{ opacity: [0.5, 0.95, 0.5], scale: [0.95, 1.08, 0.95] }}
+                transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.35, ease: "easeInOut" }}
+                className="w-3 h-3 rounded-full bg-amber-300 shadow-[0_0_10px_#FBBF24]"
+              />
+            ))}
+          </div>
+
+          {/* Hanging Cafe Plants & Shelves */}
+          <div className="absolute top-10 left-6 text-xl opacity-30 select-none">🪴</div>
+          <div className="absolute top-10 right-8 text-xl opacity-30 select-none">🌿</div>
+          <div className="absolute top-24 left-1/3 text-xs tracking-widest uppercase font-bold text-amber-800/15 select-none">Fresh Brews Daily ☕</div>
+
+          {/* Warm Sun/Lamp Ambient Glow */}
+          <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-80 h-44 bg-amber-200/40 rounded-full blur-3xl pointer-events-none" />
+        </div>
+
+        {/* Section Header */}
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-2 mb-8">
+          <div>
+            <h3 className="text-base md:text-lg font-bold text-[#4A2810] flex items-center gap-2">
+              <Coffee size={18} className="text-[#8B5A2B]" /> The Artisan Skills Brew
+            </h3>
+            <p className="text-xs text-[#7C5A43] mt-0.5">Crafted with precision, scaled for high performance.</p>
+          </div>
+          <span className="px-3 py-1 bg-white/80 border border-amber-200/80 rounded-full text-[11px] font-semibold text-[#8B5A2B] shadow-xs w-fit">
+            ☕ 4 Specialty Blends
+          </span>
+        </div>
+        
+        {/* Coffee Cups Grid */}
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-6 pt-4 pb-2">
           {skillCategories.map((category) => (
-            <div key={category.id} className="flex flex-col items-center justify-end h-full relative">
+            <div key={category.id} className="flex flex-col items-center justify-end h-full relative group">
               
-              {/* Steaming Skills & SVG Vapor */}
-              <div className="relative flex flex-wrap justify-center content-end gap-1.5 z-30 min-h-[160px] pb-4 px-2 w-full">
+              {/* Floating Steam & Skill Pills */}
+              <div className="relative flex flex-wrap justify-center content-end gap-1.5 z-30 min-h-[175px] pb-3 px-1 w-full">
                 
-                {/* Wavy Steam Lines Background */}
-                <div className="absolute bottom-4 left-0 w-full h-full flex justify-evenly items-end px-4 z-0 opacity-40">
-                  {[0, 1, 2].map((i) => (
-                    <motion.svg key={i} width="16" height="80" viewBox="0 0 16 80" className="text-slate-300"
-                      animate={{ y: [0, -15, 0], opacity: [0.3, 0.8, 0.3] }}
-                      transition={{ duration: 3.5, repeat: Infinity, delay: i * 0.8, ease: "easeInOut" }}
+                {/* Rising Steam Lines */}
+                <div className="absolute bottom-2 left-0 w-full h-full flex justify-around items-end px-2 z-0 pointer-events-none opacity-45">
+                  {[0, 1].map((i) => (
+                    <motion.svg 
+                      key={i} 
+                      width="16" 
+                      height="80" 
+                      viewBox="0 0 16 80" 
+                      className="text-amber-800/30"
+                      animate={{ y: [0, -18, 0], opacity: [0.2, 0.7, 0.2] }}
+                      transition={{ duration: 3.2, repeat: Infinity, delay: i * 0.9, ease: "easeInOut" }}
                     >
-                      <path d="M8 80 Q 16 60 8 40 T 8 0" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" />
+                      <path d="M8 80 Q 16 55 8 35 T 8 0" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" />
                     </motion.svg>
                   ))}
                 </div>
 
-                {/* Floating Skill Pills */}
+                {/* Individual Skill Badges */}
                 {category.skills.map((skill, i) => (
                   <motion.span
                     key={skill}
-                    animate={{ y: [0, -6, 0] }}
+                    animate={{ y: [0, -5, 0] }}
                     transition={{ 
-                      duration: 4, 
+                      duration: 3.8, 
                       repeat: Infinity, 
-                      delay: i * 0.25, 
+                      delay: (i % 4) * 0.28, 
                       ease: "easeInOut" 
                     }}
-                    className={`relative z-10 px-2.5 py-1 text-[11px] font-bold rounded-full border ${category.pillBg} ${category.pillText} ${category.pillBorder} shadow-sm backdrop-blur-sm`}
+                    className="relative z-10 px-2 py-0.5 text-[10px] font-semibold rounded-md bg-white/90 text-[#4A2810] border border-amber-200 shadow-xs hover:border-amber-400 transition"
                   >
                     {skill}
                   </motion.span>
                 ))}
               </div>
 
-              {/* The Coffee Cup */}
+              {/* Realistic Ceramic Coffee Cup */}
               <div className="relative z-20 drop-shadow-md">
                 
-                {/* Cup Handle */}
-                <div className={`absolute top-4 -right-4 w-10 h-16 rounded-r-full border-[5px] border-l-0 border-white ${category.cupColor} z-0`} />
+                {/* Sturdy Ceramic Mug Handle */}
+                <div className="absolute top-3 -right-3.5 w-8 h-14 rounded-r-2xl border-[5px] border-l-0 border-[#5C3317] bg-[#704214] z-0" />
                 
-                {/* Cup Body */}
-                <div className={`relative w-36 h-28 rounded-b-3xl ${category.cupColor} border-[5px] border-t-0 border-white z-10 flex items-end justify-center pb-6`}>
-                   <span className="text-xs font-black text-slate-700/50 uppercase tracking-widest text-center px-2">{category.title}</span>
+                {/* Ceramic Mug Body */}
+                <div className="relative w-32 h-24 rounded-b-3xl bg-gradient-to-b from-[#8B5A2B] via-[#704214] to-[#5C3317] border-[4px] border-t-0 border-[#4A2810] z-10 flex flex-col items-center justify-end pb-3 shadow-inner">
+                  {/* Mug Center Label Badge */}
+                  <span className={`px-2 py-0.5 text-[10px] font-bold rounded shadow-xs uppercase tracking-wider text-center border border-amber-300/30 ${category.badgeText}`}>
+                    {category.title}
+                  </span>
                 </div>
 
-                {/* Cup Rim & Brown Coffee Liquid */}
-                <div className="absolute -top-3 left-0 w-36 h-8 bg-[#4A2F1D] rounded-[50%] border-[5px] border-white z-20 flex items-center justify-center shadow-inner overflow-hidden">
-                    {/* Subtle white reflection on the coffee surface */}
-                    <div className="absolute top-1.5 left-2 w-16 h-1 bg-white/15 rounded-full rotate-[-4deg]" />
+                {/* Ceramic Mug Rim & Espresso Liquid */}
+                <div className="absolute -top-2.5 left-0 w-32 h-7 bg-[#2B170B] rounded-[50%] border-[4px] border-[#5C3317] z-20 flex items-center justify-center shadow-inner overflow-hidden">
+                  {/* Espresso Crema Foam Swirl */}
+                  <div className="w-24 h-4 bg-gradient-to-r from-[#4A2511] via-[#6B3A19] to-[#3B1C0B] rounded-full flex items-center justify-center relative">
+                    <div className="absolute top-0.5 left-2 w-10 h-0.5 bg-amber-200/30 rounded-full" />
+                  </div>
                 </div>
 
               </div>
@@ -424,6 +465,13 @@ function AboutSection() {
             </div>
           ))}
         </div>
+
+        {/* Wooden Cafe Counter Top Base */}
+        <div className="relative mt-4 pt-3 border-t-4 border-[#8B5A2B]/40 flex items-center justify-between text-[11px] text-[#7C5A43] font-medium">
+          <span className="flex items-center gap-1.5">☕ Ground &amp; Brewed daily</span>
+          <span>UC Berkeley &bull; JPL &bull; LA</span>
+        </div>
+
       </div>
     </div>
   );
