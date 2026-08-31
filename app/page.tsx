@@ -569,7 +569,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "lensai" |
             onClick={() => onSelectProject("lensai")}
             className="w-full py-2.5 bg-sky-50 hover:bg-sky-100 text-sky-600 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-sky-100 cursor-pointer"
           >
-            Read Case Study <ArrowRight size={14} />
+            Read More/Try it Out! <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -600,7 +600,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "lensai" |
             onClick={() => onSelectProject("tickertalk")}
             className="w-full py-2.5 bg-[#FBBF24]/15 hover:bg-[#FBBF24]/25 text-[#D97706] rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-[#FBBF24]/30 cursor-pointer"
           >
-            Read Case Study <ArrowRight size={14} />
+            Read More/Try it Out! <ArrowRight size={14} />
           </button>
         </div>
       </div>
