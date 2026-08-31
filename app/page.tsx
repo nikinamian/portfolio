@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Terminal, 
@@ -67,13 +68,16 @@ export default function Page() {
           >
             {/* TOP NAVIGATION BAR */}
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-6 border-b border-pink-100/80 backdrop-blur-sm">
-              <div className="flex items-center gap-4">
-                {/* Circular Profile Avatar */}
-                <div className="w-20 h-20 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white shadow-md ring-2 ring-pink-200/80 shrink-0 bg-[#FDF8F3]">
-                  <img 
+              <div className="flex items-center gap-5">
+                {/* Circular Profile Avatar - Large & Optimized */}
+                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-3 border-white shadow-lg ring-4 ring-pink-200/80 shrink-0 bg-[#FDF8F3]">
+                  <Image 
                     src="/IMG_0410.jpg" 
                     alt="Niki Namian" 
-                    className="w-full h-full object-cover object-top"
+                    fill
+                    sizes="(max-width: 768px) 96px, 128px"
+                    priority
+                    className="object-cover object-top"
                   />
                 </div>
 
@@ -349,32 +353,60 @@ function AboutSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4 pt-2">
           {/* Polaroid 1: Pickleball */}
           <div className="bg-white p-3 pb-5 rounded-lg shadow-md border border-slate-100 transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col items-center">
-            <div className="w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3 flex items-center justify-center">
-              <img src="/IMG_4343.jpg" alt="Playing Pickleball" className="w-full h-full object-contain p-1" />
+            <div className="relative w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3">
+              <Image 
+                src="/IMG_4343.jpg" 
+                alt="Playing Pickleball" 
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-contain p-1"
+                loading="lazy"
+              />
             </div>
             <p className="text-center text-xs text-slate-700 font-semibold">🎾 Pickleball tournaments</p>
           </div>
 
           {/* Polaroid 2: Baking */}
           <div className="bg-white p-3 pb-5 rounded-lg shadow-md border border-slate-100 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col items-center">
-            <div className="w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3 flex items-center justify-center">
-              <img src="/IMG_8180.jpg" alt="Fresh Strawberry Cake" className="w-full h-full object-contain p-1" />
+            <div className="relative w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3">
+              <Image 
+                src="/IMG_8180.jpg" 
+                alt="Fresh Strawberry Cake" 
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-contain p-1"
+                loading="lazy"
+              />
             </div>
             <p className="text-center text-xs text-slate-700 font-semibold">🍰 Baking</p>
           </div>
 
           {/* Polaroid 3: Mission Control */}
           <div className="bg-white p-3 pb-5 rounded-lg shadow-md border border-slate-100 transform -rotate-1 hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col items-center">
-            <div className="w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3 flex items-center justify-center">
-              <img src="/IMG_6298.jpg" alt="NASA JPL Mission Control" className="w-full h-full object-contain p-1" />
+            <div className="relative w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3">
+              <Image 
+                src="/IMG_6298.jpg" 
+                alt="NASA JPL Mission Control" 
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-contain p-1"
+                loading="lazy"
+              />
             </div>
             <p className="text-center text-xs text-slate-700 font-semibold">🚀 NASA JPL Mission Control</p>
           </div>
 
           {/* Polaroid 4: Astronaut selfie */}
           <div className="bg-white p-3 pb-5 rounded-lg shadow-md border border-slate-100 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col items-center">
-            <div className="w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3 flex items-center justify-center">
-              <img src="/IMG_6385.jpg" alt="At NASA JPL" className="w-full h-full object-contain p-1" />
+            <div className="relative w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3">
+              <Image 
+                src="/IMG_6385.jpg" 
+                alt="At NASA JPL" 
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-contain p-1"
+                loading="lazy"
+              />
             </div>
             <p className="text-center text-xs text-slate-700 font-semibold">⭐ Meeting astronauts</p>
           </div>
@@ -546,11 +578,13 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "lensai" |
       {/* LENS AI PLACARD */}
       <div className="bg-white/85 backdrop-blur-md rounded-2xl p-5 border border-sky-100 shadow-xs flex flex-col justify-between group hover:shadow-md transition">
         <div>
-          <div className="w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 relative bg-[#BCE3F0]/30 flex items-center justify-center p-2">
-            <img 
+          <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-[#BCE3F0]/30 flex items-center justify-center p-2">
+            <Image 
               src="/lensai-upload.png" 
               alt="Creative Lens AI UI" 
-              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg" 
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg p-2" 
             />
           </div>
           <span className="text-[10px] font-bold uppercase tracking-wider text-sky-500 mb-1.5 block">Multimodal Computer Vision</span>
@@ -577,11 +611,13 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "lensai" |
       {/* TICKER TALK PLACARD */}
       <div className="bg-white/85 backdrop-blur-md rounded-2xl p-5 border border-[#FBBF24]/30 shadow-xs flex flex-col justify-between group hover:shadow-md transition">
         <div>
-          <div className="w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 relative bg-slate-900 flex items-center justify-center p-2">
-            <img 
+          <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-slate-900 flex items-center justify-center p-2">
+            <Image 
               src="/tickertalk-input.png" 
               alt="Ticker Talk AI UI" 
-              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg" 
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg p-2" 
             />
           </div>
           <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 mb-1.5 block">Predictive Time-Series</span>
@@ -642,19 +678,25 @@ function ProjectDetail({ projectId, onBack }: { projectId: "lensai" | "tickertal
           <div className="space-y-10">
             <div>
               <h3 className="text-lg font-bold text-slate-800 mb-3">1. The Interface</h3>
-              <img src="/lensai-upload.png" alt="Upload Interface" className="w-full h-auto rounded-xl border border-slate-200 shadow-xs mb-2" />
+              <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-2 overflow-hidden bg-slate-50">
+                <Image src="/lensai-upload.png" alt="Upload Interface" fill sizes="(max-width: 768px) 100vw, 800px" className="object-contain" />
+              </div>
               <p className="text-xs text-slate-500 text-center">Built with Streamlit and customized via CSS injection to create a branded UI supporting camera inputs and file uploads.</p>
             </div>
 
             <div>
               <h3 className="text-lg font-bold text-slate-800 mb-3">2. Processing &amp; Validation</h3>
-              <img src="/lensai-photo.png" alt="Photo Preview" className="w-full h-auto rounded-xl border border-slate-200 shadow-xs mb-2" />
+              <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-2 overflow-hidden bg-slate-50">
+                <Image src="/lensai-photo.png" alt="Photo Preview" fill sizes="(max-width: 768px) 100vw, 800px" className="object-contain" />
+              </div>
               <p className="text-xs text-slate-500 text-center">Implemented robust error handling with exponential backoff to manage API 429 quotas seamlessly during image ingestion.</p>
             </div>
 
             <div>
               <h3 className="text-lg font-bold text-slate-800 mb-3">3. Multimodal Insights</h3>
-              <img src="/lensai-suggestions.png" alt="Creative Suggestions" className="w-full h-auto rounded-xl border border-slate-200 shadow-xs mb-2" />
+              <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-2 overflow-hidden bg-slate-50">
+                <Image src="/lensai-suggestions.png" alt="Creative Suggestions" fill sizes="(max-width: 768px) 100vw, 800px" className="object-contain" />
+              </div>
               <p className="text-xs text-slate-500 text-center">Gemini 2.5 Flash instantly generates contextual posing tips, matching AR lenses, and aesthetic captions based strictly on visual reasoning.</p>
             </div>
           </div>
@@ -687,19 +729,25 @@ function ProjectDetail({ projectId, onBack }: { projectId: "lensai" | "tickertal
         <div className="space-y-10">
           <div>
             <h3 className="text-lg font-bold text-slate-800 mb-3">1. Data Ingestion &amp; Caching</h3>
-            <img src="/tickertalk-input.png" alt="Ticker Talk Search Input" className="w-full h-auto rounded-xl border border-slate-200 shadow-xs mb-2" />
+            <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-2 overflow-hidden bg-slate-50">
+              <Image src="/tickertalk-input.png" alt="Ticker Talk Search Input" fill sizes="(max-width: 768px) 100vw, 800px" className="object-contain" />
+            </div>
             <p className="text-xs text-slate-500 text-center">Users query symbols while a background RLock caching system prevents duplicate calls to Finnhub and financial streams.</p>
           </div>
 
           <div>
             <h3 className="text-lg font-bold text-slate-800 mb-3">2. The Verdict Engine</h3>
-            <img src="/tickertalk-metrics.png" alt="Ticker Talk Metrics" className="w-full h-auto rounded-xl border border-slate-200 shadow-xs mb-2" />
+            <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-2 overflow-hidden bg-slate-50">
+              <Image src="/tickertalk-metrics.png" alt="Ticker Talk Metrics" fill sizes="(max-width: 768px) 100vw, 800px" className="object-contain" />
+            </div>
             <p className="text-xs text-slate-500 text-center">A custom scoring algorithm weighs NLP news sentiment, AI predictions, and analyst ratings to generate actionable insights.</p>
           </div>
 
           <div>
             <h3 className="text-lg font-bold text-slate-800 mb-3">3. Predictive Charting</h3>
-            <img src="/tickertalk-chart.png" alt="Ticker Talk AI Chart" className="w-full h-auto rounded-xl border border-slate-200 shadow-xs mb-2" />
+            <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-2 overflow-hidden bg-slate-50">
+              <Image src="/tickertalk-chart.png" alt="Ticker Talk AI Chart" fill sizes="(max-width: 768px) 100vw, 800px" className="object-contain" />
+            </div>
             <p className="text-xs text-slate-500 text-center">Interactive Matplotlib visuals overlay Linear Regression trendlines and 1-standard-deviation volatility safety zones over actual price data.</p>
           </div>
         </div>
