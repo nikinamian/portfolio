@@ -236,20 +236,20 @@ function TerminalScreen({ onComplete }: { onComplete: () => void }) {
           <div className="w-2.5 h-2.5 rounded-full bg-[#FBBF24]"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-[#38BDF8]"></div>
           <span className="ml-auto text-[11px] font-semibold text-pink-500 flex items-center gap-1.5">
-            <Terminal size={12} /> nikinamian@berkeley
+            <Terminal size={12} /> nikinamian@UCberkeley
           </span>
         </div>
 
         <div className="p-5 text-xs sm:text-sm text-slate-600 h-[240px] flex flex-col gap-1.5">
           <div>
-            <span className="text-[#F472B6] font-semibold">nikinamian@berkeley</span>
+            <span className="text-[#F472B6] font-semibold">nikinamian@UCberkeley</span>
             <span className="text-[#38BDF8]">:~ $</span> {text1}
             {!showSecond && <span className="animate-pulse font-bold">_</span>}
           </div>
           
           {showSecond && (
             <div>
-              <span className="text-[#F472B6] font-semibold">nikinamian@berkeley</span>
+              <span className="text-[#F472B6] font-semibold">nikinamian@UCberkeley</span>
               <span className="text-[#38BDF8]">:~/nikinamian.dev $</span> {text2}
               {showLogs && (
                 <div className="mt-3 text-pink-600 text-[11px] sm:text-xs space-y-1">
