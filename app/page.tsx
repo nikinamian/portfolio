@@ -326,7 +326,7 @@ function AboutSection() {
           Hi, I&apos;m Niki! Welcome to my portfolio.
         </h2>
         <p className="text-slate-600 text-sm leading-relaxed mb-3">
-          Born and raised in Los Angeles, I&apos;m currently studying Computer Science at <strong>UC Berkeley</strong>. I recently completed my second internship at <strong>NASA JPL</strong>, where I integrated machine learning and LLMs into the Deep Space Network to optimize complex scheduling workflows and reduce manual overhead.
+          Born and raised in Los Angeles, I&apos;m currently studying <strong>Computer Science</strong> at <strong>UC Berkeley</strong>. I recently completed my second internship at <strong>NASA JPL</strong>, where I integrated machine learning and LLMs into the Deep Space Network to optimize complex scheduling workflows and reduce manual overhead.
         </p>
         <p className="text-slate-600 text-sm leading-relaxed mb-4">
           I love building scalable architectures and applying AI to real-world infrastructure to make critical systems faster and more efficient. Feel free to explore my latest <strong>projects</strong> and check out my <strong>work experience</strong>!
@@ -347,7 +347,7 @@ function AboutSection() {
           <Heart size={16} className="text-pink-500" /> Life Outside the IDE
         </h3>
         <p className="text-slate-600 text-xs leading-relaxed mb-8">
-          Outside of coding, I love baking, playing pickleball, and going on long walks! I also love trying new coffee shops with friends and family or making my own iced lattes! Here are a few snapshots from my world:
+          Outside of coding, I love <strong>baking</strong>, playing <strong>pickleball</strong>, and going on <strong>long walks</strong>! I also love trying new <strong>coffee</strong> shops with friends and family or making my own iced lattes! Here are a few snapshots from my world:
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4 pt-2">
