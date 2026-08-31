@@ -69,7 +69,7 @@ export default function Page() {
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-6 border-b border-pink-100/80 backdrop-blur-sm">
               <div className="flex items-center gap-4">
                 {/* Circular Profile Avatar */}
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-white shadow-md ring-2 ring-pink-200/80 shrink-0 bg-[#FDF8F3]">
+                <div className="w-20 h-20 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white shadow-md ring-2 ring-pink-200/80 shrink-0 bg-[#FDF8F3]">
                   <img 
                     src="/IMG_0410.jpg" 
                     alt="Niki Namian" 
