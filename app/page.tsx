@@ -690,7 +690,7 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
           </div>
 
           <p className="text-slate-600 leading-relaxed mb-8 text-sm">
-            During my Machine Learning internship at NASA JPL, I developed an end-to-end intelligent decision-support system to resolve overbooking across the Deep Space Network (DSN). By analyzing 70+ weeks of historical schedules across phase transitions (BOP to NWS to PWS) and integrating the Onyx LLM API with internal JPL wikis, the solution generates automated recommendation reports with pattern cut insights and confidence metrics.
+            During my Machine Learning internship at NASA JPL, I engineered an LLM-driven NLP pipeline and Python automation scripts to streamline schedule deconfliction across the Deep Space Network (DSN). By querying 100,000+ MongoDB mission records spanning 70+ weeks of historical phase transitions, I built and validated predictive ML models against past DSN mission logs. Integrating the Onyx API to parse internal JPL wikis, the resulting pipeline outputs structured recommendation reports and pattern cut insights, cutting manual scheduling overhead by over 20% and enabling a 4+ hour reduction in deconfliction time per phase.
           </p>
 
           <div className="relative w-full h-[500px] md:h-[600px] rounded-xl border border-slate-200 shadow-xs mb-8 overflow-hidden bg-slate-50">
