@@ -14,7 +14,8 @@ import {
   ArrowRight,
   ArrowLeft,
   Coffee,
-  Heart
+  Heart,
+  FileText
 } from "lucide-react";
 
 export default function Page() {
@@ -22,7 +23,7 @@ export default function Page() {
   const [showTerminal, setShowTerminal] = useState(true);
   const [activeTab, setActiveTab] = useState<"about" | "projects" | "experience">("about");
   const [replayKey, setReplayKey] = useState(0);
-  const [selectedProject, setSelectedProject] = useState<"lensai" | "tickertalk" | null>(null);
+  const [selectedProject, setSelectedProject] = useState<"dsn-ml" | "lensai" | "tickertalk" | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -69,7 +70,7 @@ export default function Page() {
             {/* TOP NAVIGATION BAR */}
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-6 border-b border-pink-100/80 backdrop-blur-sm">
               <div className="flex items-center gap-5">
-                {/* Circular Profile Avatar - Large & Optimized */}
+                {/* Circular Profile Avatar */}
                 <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-3 border-white shadow-lg ring-4 ring-pink-200/80 shrink-0 bg-[#FDF8F3]">
                   <Image 
                     src="/IMG_0410.jpg" 
@@ -320,7 +321,6 @@ function AboutSection() {
 
   return (
     <div className="space-y-5">
-      {/* Intro Card */}
       <div className="bg-white/85 backdrop-blur-md rounded-2xl p-6 border border-pink-100/80 shadow-xs">
         <h2 className="text-xl md:text-2xl font-bold text-slate-800 mb-3 leading-snug">
           Hi, I&apos;m Niki! Welcome to my portfolio.
@@ -341,7 +341,6 @@ function AboutSection() {
         </div>
       </div>
 
-      {/* POLAROID PHOTO COLLAGE */}
       <div className="bg-white/85 backdrop-blur-md rounded-2xl p-6 border border-pink-100/80 shadow-xs">
         <h3 className="text-base font-bold text-slate-800 mb-2 flex items-center gap-2">
           <Heart size={16} className="text-pink-500" /> Life Outside the IDE
@@ -351,7 +350,6 @@ function AboutSection() {
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4 pt-2">
-          {/* Polaroid 1: Pickleball */}
           <div className="bg-white p-3 pb-5 rounded-lg shadow-md border border-slate-100 transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col items-center">
             <div className="relative w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3">
               <Image 
@@ -366,7 +364,6 @@ function AboutSection() {
             <p className="text-center text-xs text-slate-700 font-semibold">🎾 Pickleball tournaments</p>
           </div>
 
-          {/* Polaroid 2: Baking */}
           <div className="bg-white p-3 pb-5 rounded-lg shadow-md border border-slate-100 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col items-center">
             <div className="relative w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3">
               <Image 
@@ -381,7 +378,6 @@ function AboutSection() {
             <p className="text-center text-xs text-slate-700 font-semibold">🍰 Baking</p>
           </div>
 
-          {/* Polaroid 3: Mission Control */}
           <div className="bg-white p-3 pb-5 rounded-lg shadow-md border border-slate-100 transform -rotate-1 hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col items-center">
             <div className="relative w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3">
               <Image 
@@ -396,7 +392,6 @@ function AboutSection() {
             <p className="text-center text-xs text-slate-700 font-semibold">🚀 NASA JPL Mission Control</p>
           </div>
 
-          {/* Polaroid 4: Astronaut selfie */}
           <div className="bg-white p-3 pb-5 rounded-lg shadow-md border border-slate-100 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 flex flex-col items-center">
             <div className="relative w-full h-48 bg-[#FAF6F0] rounded overflow-hidden mb-3">
               <Image 
@@ -413,20 +408,11 @@ function AboutSection() {
         </div>
       </div>
 
-      {/* COZY CAFE SKILLS (UPSIDE DOWN STEAM & SHELVES) */}
       <div className="relative rounded-3xl pt-10 border border-pink-200/70 shadow-md overflow-hidden bg-gradient-to-b from-[#FFF5F7] via-[#FAF3EC] to-[#F2E7DC]">
-        
-        {/* Aesthetic Background Cafe Environment */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-          
-          {/* Cafe Wall Wallpaper */}
           <div className="absolute inset-0 bg-[linear-gradient(90deg,#FFF5F7_0px,#FFF5F7_32px,#F8EBE3_32px,#F8EBE3_36px)] opacity-60" />
-
-          {/* City View Window Center */}
           <div className="absolute top-6 left-1/2 -translate-x-1/2 w-[85%] max-w-lg h-56 bg-gradient-to-b from-sky-200 to-pink-50 border-[8px] border-white rounded-t-3xl shadow-inner opacity-90 overflow-hidden">
-             {/* Glowing Sun */}
              <div className="absolute top-8 left-10 w-12 h-12 bg-yellow-100 rounded-full blur-[2px] opacity-80 shadow-[0_0_20px_#FBBF24]" />
-             {/* Cozy City Silhouettes */}
              <div className="absolute bottom-0 left-0 w-full flex items-end justify-center gap-1 opacity-50">
                 <div className="w-14 h-24 bg-sky-900 rounded-t-sm" />
                 <div className="w-10 h-32 bg-sky-800 rounded-t-sm" />
@@ -434,12 +420,10 @@ function AboutSection() {
                 <div className="w-16 h-28 bg-sky-800 rounded-t-sm" />
                 <div className="w-16 h-16 bg-sky-900 rounded-t-sm" />
              </div>
-             {/* Window Panes */}
              <div className="absolute top-0 left-1/2 w-1.5 h-full bg-white -translate-x-1/2 shadow-sm" />
              <div className="absolute top-1/2 left-0 w-full h-1.5 bg-white -translate-y-1/2 shadow-sm" />
           </div>
 
-          {/* Hanging Cute Cafe Lamps */}
           <div className="absolute top-0 left-[18%] flex flex-col items-center">
             <div className="w-[3px] h-20 bg-[#6A472E] shadow-sm" />
             <div className="w-12 h-6 bg-[#D2A679] rounded-t-full relative shadow-md border-b-4 border-[#B88B60]">
@@ -453,16 +437,13 @@ function AboutSection() {
             </div>
           </div>
 
-          {/* Warm Sunbeams */}
           <motion.div 
             animate={{ opacity: [0.15, 0.35, 0.15] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -top-10 -left-10 w-[140%] h-[160%] bg-gradient-to-tr from-pink-200/20 via-transparent to-amber-100/10 transform -rotate-12 pointer-events-none"
           />
-
         </div>
 
-        {/* Section Header */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center mb-14 mt-8">
           <h3 className="text-xl md:text-2xl font-black text-[#4E2A0E] flex items-center gap-2 bg-white/95 px-5 py-2.5 rounded-2xl backdrop-blur-md shadow-sm border border-pink-100">
             <Coffee size={24} className="text-[#8B5A2B]" /> Technical Skills Cafe
@@ -472,17 +453,11 @@ function AboutSection() {
           </p>
         </div>
         
-        {/* Coffee Cups & Shelf Area */}
         <div className="relative z-10 pt-2 pb-6">
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-16 relative z-20 px-4 md:px-8">
             {skillCategories.map((category) => (
               <div key={category.id} className="flex flex-col items-center justify-end h-full relative group">
-                
-                {/* Outward Flowing Steam (Skills in Inverted Triangle) */}
                 <div className="relative flex flex-col items-center justify-end z-30 min-h-[190px] w-full mb-2">
-                  
-                  {/* Steam Waves SVG Behind Skills */}
                   <div className="absolute bottom-0 left-0 w-full h-full flex justify-around items-end px-2 z-0 pointer-events-none opacity-40">
                     {[0, 1, 2].map((i) => (
                       <motion.svg 
@@ -499,7 +474,6 @@ function AboutSection() {
                     ))}
                   </div>
 
-                  {/* Skills arranged in tiered rows (wider at top, narrower at bottom) */}
                   <div className="flex flex-col items-center gap-2 relative z-10 w-full">
                     {category.skillTiers.map((tier, rowIdx) => (
                       <div key={rowIdx} className="flex justify-center flex-wrap gap-1.5 w-full">
@@ -523,45 +497,33 @@ function AboutSection() {
                   </div>
                 </div>
 
-                {/* Big White Ceramic Mug with Brown Coffee & Saucer */}
                 <div className="relative z-20 drop-shadow-xl flex flex-col items-center">
-                  
-                  {/* Large White Mug Handle */}
                   <div className="absolute top-4 -right-5 w-10 h-16 rounded-r-full border-[6px] border-l-0 border-white shadow-sm z-0" />
-                  
-                  {/* Cup Rim & Steaming Brown Coffee Liquid */}
                   <div className="w-32 h-10 bg-[#3A1F0C] rounded-[50%] border-[5px] border-white z-20 flex items-center justify-center shadow-inner overflow-hidden relative">
                     <div className="w-24 h-6 bg-gradient-to-r from-[#4E2B15] via-[#754421] to-[#3A1F0C] rounded-full flex items-center justify-center relative">
                       <div className="absolute top-1 left-2 w-8 h-1 bg-amber-200/40 rounded-full rotate-[-6deg]" />
                     </div>
                   </div>
 
-                  {/* Big White Porcelain Mug Body */}
                   <div className="relative w-32 h-24 -mt-5 rounded-b-[2.5rem] bg-gradient-to-b from-white to-[#F5EBE1] border-[5px] border-t-0 border-[#F5EAE0] z-10 flex flex-col items-center justify-end pb-3 shadow-[inset_0_-10px_20px_rgba(0,0,0,0.03)]">
                     <span className={`px-2 py-0.5 text-[9px] font-black rounded-md shadow-xs uppercase tracking-wider text-center border ${category.badgeColor}`}>
                       {category.title}
                     </span>
                   </div>
 
-                  {/* Ceramic Saucer under cup */}
                   <div className="w-36 h-6 bg-white rounded-[50%] border-b-4 border-[#D8C6B2] -mt-4 shadow-md z-0" />
                 </div>
 
-                {/* Individual Floating Wooden Shelf underneath the cup */}
                 <div className="relative mt-2 flex flex-col items-center z-10">
-                   {/* Top surface of the shelf */}
                    <div className="w-44 h-3 bg-[#D2A679] rounded-t-sm shadow-inner border-b border-[#A06C3E]" />
-                   {/* Front edge of the shelf */}
                    <div className="w-44 h-4 bg-[#8B5A2B] rounded-b-md shadow-[0_15px_15px_rgba(0,0,0,0.1)] flex justify-between px-4 items-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#5A381E] opacity-50" />
                       <div className="w-1.5 h-1.5 rounded-full bg-[#5A381E] opacity-50" />
                    </div>
                 </div>
-
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </div>
@@ -571,10 +533,41 @@ function AboutSection() {
 // ==========================================
 // 3. PROJECTS (PLACARDS)
 // ==========================================
-function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "lensai" | "tickertalk") => void }) {
+function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" | "lensai" | "tickertalk") => void }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       
+      {/* NASA JPL DSN ML PLACARD */}
+      <div className="bg-white/85 backdrop-blur-md rounded-2xl p-5 border border-purple-200/80 shadow-xs flex flex-col justify-between group hover:shadow-md transition">
+        <div>
+          <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-slate-950 flex items-center justify-center p-2">
+            <div className="absolute inset-0 bg-gradient-to-tr from-purple-950/50 to-sky-950/40" />
+            <div className="relative z-10 text-center px-4">
+              <span className="text-[10px] font-bold tracking-widest text-pink-300 uppercase block mb-1">NASA JPL Internship Project</span>
+              <p className="text-white font-black text-sm leading-tight">DSN Scheduling Deconfliction ML</p>
+            </div>
+          </div>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-purple-600 mb-1.5 block">Machine Learning &amp; LLM Automation</span>
+          <h3 className="text-xl font-black text-slate-800 mb-2">DSN Schedule Deconfliction</h3>
+          <p className="text-slate-600 text-xs leading-relaxed mb-5">
+            Engineered Random Forest models and Onyx LLM pipelines over 70+ weeks of Deep Space Network scheduling logs to predict track counts, gaps, and pattern cuts across phase transitions.
+          </p>
+        </div>
+        <div>
+          <div className="flex flex-wrap gap-1.5 mb-5">
+            {["Python", "Random Forest", "Onyx LLM", "Pattern Mining"].map((tech) => (
+              <span key={tech} className="px-2 py-0.5 bg-white shadow-xs text-slate-600 text-[10px] font-bold rounded border border-slate-100">{tech}</span>
+            ))}
+          </div>
+          <button 
+            onClick={() => onSelectProject("dsn-ml")}
+            className="w-full py-2.5 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-purple-200/70 cursor-pointer"
+          >
+            Read More / Presentation <ArrowRight size={14} />
+          </button>
+        </div>
+      </div>
+
       {/* LENS AI PLACARD */}
       <div className="bg-white/85 backdrop-blur-md rounded-2xl p-5 border border-sky-100 shadow-xs flex flex-col justify-between group hover:shadow-md transition">
         <div>
@@ -648,10 +641,89 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "lensai" |
 // ==========================================
 // PROJECT DETAIL VIEW
 // ==========================================
-function ProjectDetail({ projectId, onBack }: { projectId: "lensai" | "tickertalk", onBack: () => void }) {
+function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" | "tickertalk", onBack: () => void }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  if (projectId === "dsn-ml") {
+    return (
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6 mt-2">
+        <button onClick={onBack} className="flex items-center gap-1.5 text-slate-500 hover:text-purple-600 transition text-xs font-bold cursor-pointer">
+          <ArrowLeft size={14} /> Back to Portfolio
+        </button>
+
+        <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-10 border border-purple-100 shadow-xs">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+            <div>
+              <div className="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-200 mb-2">
+                NASA Jet Propulsion Laboratory (JPL) Internship Project
+              </div>
+              <h2 className="text-2xl md:text-4xl font-black text-slate-800 mb-1.5">Machine Learning for DSN Scheduling Deconfliction</h2>
+              <p className="text-slate-500 text-sm font-medium">Predictive Decision Support &amp; NLP Extraction for the Deep Space Network</p>
+            </div>
+            <a 
+              href="https://drive.google.com/file/d/1B-2PjYD6EKshd_N7vGkfHHH4BMvLk99K/view?usp=sharing" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-bold transition flex items-center gap-1.5 w-fit shadow-xs"
+            >
+              <FileText size={14} /> View Presentation Deck <ExternalLink size={14} />
+            </a>
+          </div>
+
+          <p className="text-slate-600 leading-relaxed mb-8 text-sm">
+            During my Machine Learning internship at NASA JPL, I developed an end-to-end intelligent decision-support system to resolve overbooking across the Deep Space Network (DSN). By analyzing 70+ weeks of historical schedules across phase transitions (BOP to NWS to PWS) and integrating the Onyx LLM API with internal JPL wikis, the solution generates automated recommendation reports with pattern cut insights and confidence metrics.
+          </p>
+
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-lg font-bold text-slate-800 mb-3">1. The Bottleneck: Overbooked Antenna Tracks</h3>
+              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
+                <p>• DSN schedulers adjust <strong>600+ mission tracks weekly</strong> across 40+ missions (e.g., MRO, VGR1, MSL, STA).</p>
+                <p>• Schedulers generate initial requirements against empty schedules, creating heavy overlap that historically required intensive manual deconfliction.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-slate-800 mb-3">2. System Architecture &amp; Methodology</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div className="p-4 rounded-xl border border-purple-100 bg-purple-50/40 space-y-1.5">
+                  <span className="font-bold text-purple-900 block">Random Forest ML (300 Trees)</span>
+                  <p className="text-slate-600 leading-relaxed">Trained to predict track count, total time, and gap changes per transition. Offers complete explainability for schedulers while preventing overfitting on limited historical sets.</p>
+                </div>
+                <div className="p-4 rounded-xl border border-sky-100 bg-sky-50/40 space-y-1.5">
+                  <span className="font-bold text-sky-900 block">Onyx LLM Wiki Requirements Agent</span>
+                  <p className="text-slate-600 leading-relaxed">Built an agent querying the internal JPL scheduling Wiki to parse constraints into structured metrics, paired with a custom caching layer to eliminate repeat query latency.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-slate-800 mb-3">3. Validated Accuracy &amp; Results (Weeks 43–45)</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <div className="text-2xl font-black text-purple-600">79%</div>
+                  <div className="text-[11px] font-bold text-slate-700 mt-1">Track Count</div>
+                  <div className="text-[10px] text-slate-500">Within ±1 track ($n=334/421$)</div>
+                </div>
+                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <div className="text-2xl font-black text-sky-600">82%</div>
+                  <div className="text-[11px] font-bold text-slate-700 mt-1">Total Time</div>
+                  <div className="text-[10px] text-slate-500">Within ±20% ($n=347/421$)</div>
+                </div>
+                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <div className="text-2xl font-black text-emerald-600">78%</div>
+                  <div className="text-[11px] font-bold text-slate-700 mt-1">Mean Gap</div>
+                  <div className="text-[10px] text-slate-500">Within 6 hrs ($n=304/388$)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
 
   if (projectId === "lensai") {
     return (
