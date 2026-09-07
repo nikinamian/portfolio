@@ -113,10 +113,10 @@ export default function Page() {
                   href="https://www.linkedin.com/in/niki-namian/"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-sky-300 text-slate-600 hover:text-sky-500 rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5"
+                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-sky-300 hover:text-sky-500 rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5"
                 >
-                  LinkedIn
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <span className="text-blue-600">LinkedIn</span>
+                  <svg className="w-3.5 h-3.5 text-slate-600 fill-current group-hover:text-sky-500 transition" viewBox="0 0 24 24">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24Z" />
                   </svg>
                 </a>
@@ -124,10 +124,10 @@ export default function Page() {
                   href="https://github.com/nikinamian"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-pink-300 text-slate-600 hover:text-pink-500 rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5"
+                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-pink-300 hover:text-pink-500 rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5 group"
                 >
-                  GitHub
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <span className="text-blue-600">GitHub</span>
+                  <svg className="w-3.5 h-3.5 text-slate-600 fill-current group-hover:text-pink-500 transition" viewBox="0 0 24 24">
                     <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" />
                   </svg>
                 </a>
@@ -236,7 +236,7 @@ function TerminalScreen({ onComplete }: { onComplete: () => void }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.5 }}
-      className="flex items-center justify-center h-screen w-screen relative overflow-hidden"
+      className="flex flex-col items-center justify-center h-screen w-screen relative overflow-hidden gap-6"
     >
       <div className="w-[90%] max-w-[500px] bg-white/95 backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-pink-100 relative z-10">
         <div className="bg-[#FCE7F3] px-4 py-2.5 flex items-center gap-2 border-b border-pink-200">
@@ -270,6 +270,14 @@ function TerminalScreen({ onComplete }: { onComplete: () => void }) {
           )}
         </div>
       </div>
+      
+      {/* SKIP INTRO BUTTON */}
+      <button 
+        onClick={onComplete}
+        className="px-4 py-2 bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 rounded-full text-xs font-semibold backdrop-blur-sm border border-slate-200 shadow-sm transition-all flex items-center gap-1.5 cursor-pointer z-10"
+      >
+        Skip Intro <ArrowRight size={14} />
+      </button>
     </motion.div>
   );
 }
@@ -545,7 +553,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
         <div>
           <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-black flex items-center justify-center p-2">
             <Image 
-              src="/jpl_cover_photo" 
+              src="/jpl_project_cover.png" 
               alt="Machine Learning for DSN Scheduling Deconfliction @ NASA JPL" 
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -568,7 +576,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
             onClick={() => onSelectProject("dsn-ml")}
             className="w-full py-2.5 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-purple-200/70 cursor-pointer"
           >
-            Read More / Presentation <ArrowRight size={14} />
+            Read More/Presentation <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -601,7 +609,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
             onClick={() => onSelectProject("lensai")}
             className="w-full py-2.5 bg-sky-50 hover:bg-sky-100 text-sky-600 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-sky-100 cursor-pointer"
           >
-            Read More/Try it Out! <ArrowRight size={14} />
+            Read More/Presentation <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -679,7 +687,7 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
 
           <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-8 overflow-hidden bg-black flex items-center justify-center">
             <Image 
-              src="/jpl_cover_photo" 
+              src="/jpl_project_cover.png" 
               alt="NASA JPL DSN Scheduling Presentation Title Slide" 
               fill 
               sizes="(max-width: 768px) 100vw, 800px" 
