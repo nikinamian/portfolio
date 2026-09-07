@@ -580,40 +580,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
             onClick={() => onSelectProject("dsn-ml")}
             className="w-full py-2.5 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-purple-200/70 cursor-pointer"
           >
-            Read More / Presentation <ArrowRight size={14} />
-          </button>
-        </div>
-      </div>
-
-      {/* LENS AI PLACARD */}
-      <div className="bg-white/85 backdrop-blur-md rounded-2xl p-5 border border-sky-100 shadow-xs flex flex-col justify-between group hover:shadow-md transition">
-        <div>
-          <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-[#BCE3F0]/30 flex items-center justify-center p-2">
-            <Image 
-              src="/lensai-upload.png" 
-              alt="Creative Lens AI UI" 
-              fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg p-2" 
-            />
-          </div>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-sky-500 mb-1.5 block">Multimodal Computer Vision</span>
-          <h3 className="text-xl font-black text-slate-800 mb-2">Creative Lens AI</h3>
-          <p className="text-slate-600 text-xs leading-relaxed mb-5">
-            Engineered a real-time multimodal AI assistant utilizing Gemini 2.5 Flash to eliminate the creative friction of photography through context-aware posing tips, AR lens recommendations, and captions.
-          </p>
-        </div>
-        <div>
-          <div className="flex flex-wrap gap-1.5 mb-5">
-            {["Python", "Streamlit", "Gemini API", "Computer Vision"].map((tech) => (
-              <span key={tech} className="px-2 py-0.5 bg-white shadow-xs text-slate-600 text-[10px] font-bold rounded border border-slate-100">{tech}</span>
-            ))}
-          </div>
-          <button 
-            onClick={() => onSelectProject("lensai")}
-            className="w-full py-2.5 bg-sky-50 hover:bg-sky-100 text-sky-600 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-sky-100 cursor-pointer"
-          >
-            Read More/Try it Out! <ArrowRight size={14} />
+            Read More/Presentation <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -645,6 +612,39 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
           <button 
             onClick={() => onSelectProject("tickertalk")}
             className="w-full py-2.5 bg-[#FBBF24]/15 hover:bg-[#FBBF24]/25 text-[#D97706] rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-[#FBBF24]/30 cursor-pointer"
+          >
+            Read More/Try it Out! <ArrowRight size={14} />
+          </button>
+        </div>
+      </div>
+
+      {/* LENS AI PLACARD */}
+      <div className="bg-white/85 backdrop-blur-md rounded-2xl p-5 border border-sky-100 shadow-xs flex flex-col justify-between group hover:shadow-md transition">
+        <div>
+          <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-[#BCE3F0]/30 flex items-center justify-center p-2">
+            <Image 
+              src="/lensai-upload.png" 
+              alt="Creative Lens AI UI" 
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg p-2" 
+            />
+          </div>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-sky-500 mb-1.5 block">Multimodal Computer Vision</span>
+          <h3 className="text-xl font-black text-slate-800 mb-2">Creative Lens AI</h3>
+          <p className="text-slate-600 text-xs leading-relaxed mb-5">
+            Engineered a real-time multimodal AI assistant utilizing Gemini 2.5 Flash to eliminate the creative friction of photography through context-aware posing tips, AR lens recommendations, and captions.
+          </p>
+        </div>
+        <div>
+          <div className="flex flex-wrap gap-1.5 mb-5">
+            {["Python", "Streamlit", "Gemini API", "Computer Vision"].map((tech) => (
+              <span key={tech} className="px-2 py-0.5 bg-white shadow-xs text-slate-600 text-[10px] font-bold rounded border border-slate-100">{tech}</span>
+            ))}
+          </div>
+          <button 
+            onClick={() => onSelectProject("lensai")}
+            className="w-full py-2.5 bg-sky-50 hover:bg-sky-100 text-sky-600 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-sky-100 cursor-pointer"
           >
             Read More/Try it Out! <ArrowRight size={14} />
           </button>
