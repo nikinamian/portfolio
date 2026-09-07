@@ -545,7 +545,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
         <div>
           <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-black flex items-center justify-center p-2">
             <Image 
-              src="/jpl_cover_photo.jpg" 
+              src="/jpl_cover_photo" 
               alt="Machine Learning for DSN Scheduling Deconfliction @ NASA JPL" 
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -679,7 +679,7 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
 
           <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-8 overflow-hidden bg-black flex items-center justify-center">
             <Image 
-              src="/jpl_cover_photo.jpg" 
+              src="/jpl_cover_photo" 
               alt="NASA JPL DSN Scheduling Presentation Title Slide" 
               fill 
               sizes="(max-width: 768px) 100vw, 800px" 
