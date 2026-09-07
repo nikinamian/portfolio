@@ -109,25 +109,29 @@ export default function Page() {
                 >
                   <RotateCcw size={12} /> Replay Intro
                 </button>
+                
+                {/* LinkedIn Button with Brand Colors */}
                 <a
                   href="https://www.linkedin.com/in/niki-namian/"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-sky-300 hover:text-sky-500 rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5"
+                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-[#0A66C2]/40 hover:bg-[#0A66C2]/5 text-[#0A66C2] rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5"
                 >
-                  <span className="text-blue-600">LinkedIn</span>
-                  <svg className="w-3.5 h-3.5 text-slate-600 fill-current group-hover:text-sky-500 transition" viewBox="0 0 24 24">
+                  LinkedIn
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24Z" />
                   </svg>
                 </a>
+                
+                {/* GitHub Button with Brand Colors */}
                 <a
                   href="https://github.com/nikinamian"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-pink-300 hover:text-pink-500 rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5 group"
+                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-[#24292e]/40 hover:bg-[#24292e]/5 text-[#24292e] rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5"
                 >
-                  <span className="text-blue-600">GitHub</span>
-                  <svg className="w-3.5 h-3.5 text-slate-600 fill-current group-hover:text-pink-500 transition" viewBox="0 0 24 24">
+                  GitHub
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                     <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" />
                   </svg>
                 </a>
@@ -576,7 +580,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
             onClick={() => onSelectProject("dsn-ml")}
             className="w-full py-2.5 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-purple-200/70 cursor-pointer"
           >
-            Read More/Presentation <ArrowRight size={14} />
+            Read More / Presentation <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -609,7 +613,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
             onClick={() => onSelectProject("lensai")}
             className="w-full py-2.5 bg-sky-50 hover:bg-sky-100 text-sky-600 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-sky-100 cursor-pointer"
           >
-            Read More/Presentation <ArrowRight size={14} />
+            Read More/Try it Out! <ArrowRight size={14} />
           </button>
         </div>
       </div>
