@@ -128,7 +128,7 @@ export default function Page() {
                   href="https://github.com/nikinamian"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-[#24292e]/40 hover:bg-[#24292e]/5 text-[#24292e] rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5"
+                  className="px-3 py-1.5 bg-white/90 border border-slate-200 hover:border-[#24292e]/40 hover:bg-[#24292e]/5 text-[#24292e] rounded-lg text-[11px] font-semibold transition shadow-xs flex items-center justify-center gap-1.5 group"
                 >
                   GitHub
                   <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -683,70 +683,25 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
               href="https://drive.google.com/file/d/1B-2PjYD6EKshd_N7vGkfHHH4BMvLk99K/view?usp=sharing" 
               target="_blank" 
               rel="noreferrer" 
-              className="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-bold transition flex items-center gap-1.5 w-fit shadow-xs"
+              className="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-bold transition flex items-center gap-1.5 w-fit shadow-xs shrink-0"
             >
-              <FileText size={14} /> View Presentation Deck <ExternalLink size={14} />
+              <FileText size={14} /> View Presentation <ExternalLink size={14} />
             </a>
-          </div>
-
-          <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-8 overflow-hidden bg-black flex items-center justify-center">
-            <Image 
-              src="/jpl_project_cover.png" 
-              alt="NASA JPL DSN Scheduling Presentation Title Slide" 
-              fill 
-              sizes="(max-width: 768px) 100vw, 800px" 
-              className="object-contain p-2" 
-            />
           </div>
 
           <p className="text-slate-600 leading-relaxed mb-8 text-sm">
             During my Machine Learning internship at NASA JPL, I developed an end-to-end intelligent decision-support system to resolve overbooking across the Deep Space Network (DSN). By analyzing 70+ weeks of historical schedules across phase transitions (BOP to NWS to PWS) and integrating the Onyx LLM API with internal JPL wikis, the solution generates automated recommendation reports with pattern cut insights and confidence metrics.
           </p>
 
-          <div className="space-y-10">
-            <div>
-              <h3 className="text-lg font-bold text-slate-800 mb-3">1. The Bottleneck: Overbooked Antenna Tracks</h3>
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
-                <p>• DSN schedulers adjust <strong>600+ mission tracks weekly</strong> across 40+ missions (e.g., MRO, VGR1, MSL, STA).</p>
-                <p>• Schedulers generate initial requirements against empty schedules, creating heavy overlap that historically required intensive manual deconfliction.</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold text-slate-800 mb-3">2. System Architecture &amp; Methodology</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div className="p-4 rounded-xl border border-purple-100 bg-purple-50/40 space-y-1.5">
-                  <span className="font-bold text-purple-900 block">Random Forest ML (300 Trees)</span>
-                  <p className="text-slate-600 leading-relaxed">Trained to predict track count, total time, and gap changes per transition. Offers complete explainability for schedulers while preventing overfitting on limited historical sets.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-sky-100 bg-sky-50/40 space-y-1.5">
-                  <span className="font-bold text-sky-900 block">Onyx LLM Wiki Requirements Agent</span>
-                  <p className="text-slate-600 leading-relaxed">Built an agent querying the internal JPL scheduling Wiki to parse constraints into structured metrics, paired with a custom caching layer to eliminate repeat query latency.</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold text-slate-800 mb-3">3. Validated Accuracy &amp; Results (Weeks 43–45)</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-                  <div className="text-2xl font-black text-purple-600">79%</div>
-                  <div className="text-[11px] font-bold text-slate-700 mt-1">Track Count</div>
-                  <div className="text-[10px] text-slate-500">Within ±1 track ($n=334/421$)</div>
-                </div>
-                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-                  <div className="text-2xl font-black text-sky-600">82%</div>
-                  <div className="text-[11px] font-bold text-slate-700 mt-1">Total Time</div>
-                  <div className="text-[10px] text-slate-500">Within ±20% ($n=347/421$)</div>
-                </div>
-                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-                  <div className="text-2xl font-black text-emerald-600">78%</div>
-                  <div className="text-[11px] font-bold text-slate-700 mt-1">Mean Gap</div>
-                  <div className="text-[10px] text-slate-500">Within 6 hrs ($n=304/388$)</div>
-                </div>
-              </div>
-            </div>
+          <div className="relative w-full h-[500px] md:h-[600px] rounded-xl border border-slate-200 shadow-xs mb-8 overflow-hidden bg-slate-50">
+            <iframe 
+              src="https://drive.google.com/file/d/1B-2PjYD6EKshd_N7vGkfHHH4BMvLk99K/preview" 
+              className="w-full h-full border-0" 
+              allow="autoplay"
+              title="NASA JPL Presentation Preview"
+            />
           </div>
+
         </div>
       </motion.div>
     );
