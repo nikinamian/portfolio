@@ -68,40 +68,40 @@ export default function Page() {
             className="max-w-5xl mx-auto p-4 md:p-10 relative z-10"
           >
             {/* TOP NAVIGATION BAR */}
-            <header className="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-6 border-b border-pink-100/80 backdrop-blur-sm">
-              <div className="flex items-center gap-5">
-                {/* Circular Profile Avatar */}
-                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-3 border-white shadow-lg ring-4 ring-pink-200/80 shrink-0 bg-[#FDF8F3]">
+            <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-pink-100/80 backdrop-blur-sm">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                {/* Enlarged Profile Avatar */}
+                <div className="relative w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-4 ring-pink-200/90 shrink-0 bg-[#FDF8F3]">
                   <Image 
                     src="/IMG_0410.jpg" 
                     alt="Niki Namian" 
                     fill
-                    sizes="(max-width: 768px) 96px, 128px"
+                    sizes="(max-width: 768px) 144px, 192px"
                     priority
                     className="object-cover object-top"
                   />
                 </div>
 
                 <div>
-                  <h1 className="text-2xl md:text-3xl font-black tracking-tight text-slate-800">
+                  <h1 className="text-3xl md:text-4xl font-black tracking-tight text-slate-800">
                     Niki Namian
                   </h1>
-                  <div className="mt-1 flex flex-col gap-0.5">
-                    <p className="text-xs md:text-sm font-bold text-sky-600">
+                  <div className="mt-1.5 flex flex-col gap-1">
+                    <p className="text-sm md:text-base font-bold text-sky-600">
                       Computer Science Student @ UC Berkeley
                     </p>
                     <p className="text-xs md:text-sm font-medium text-pink-500">
                       2x ML/SWE Intern @ NASA JPL
                     </p>
                   </div>
-                  <p className="text-[11px] text-slate-400 mt-1 flex items-center gap-1.5">
-                    <MapPin size={12} className="text-[#38BDF8]" /> Los Angeles, CA → Berkeley, CA
+                  <p className="text-[11px] md:text-xs text-slate-400 mt-2 flex items-center gap-1.5">
+                    <MapPin size={13} className="text-[#38BDF8]" /> Los Angeles, CA → Berkeley, CA
                   </p>
                 </div>
               </div>
 
               {/* ACTION LINKS & REPLAY */}
-              <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex flex-wrap items-center gap-2.5 self-start md:self-auto">
                 <button
                   onClick={triggerReplay}
                   className="px-3 py-1.5 bg-white/90 hover:bg-pink-50 text-pink-600 rounded-lg text-[11px] font-semibold flex items-center gap-1.5 transition border border-pink-200/80 shadow-xs cursor-pointer"
@@ -540,12 +540,14 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
       {/* NASA JPL DSN ML PLACARD */}
       <div className="bg-white/85 backdrop-blur-md rounded-2xl p-5 border border-purple-200/80 shadow-xs flex flex-col justify-between group hover:shadow-md transition">
         <div>
-          <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-slate-950 flex items-center justify-center p-2">
-            <div className="absolute inset-0 bg-gradient-to-tr from-purple-950/50 to-sky-950/40" />
-            <div className="relative z-10 text-center px-4">
-              <span className="text-[10px] font-bold tracking-widest text-pink-300 uppercase block mb-1">NASA JPL Internship Project</span>
-              <p className="text-white font-black text-sm leading-tight">DSN Scheduling Deconfliction ML</p>
-            </div>
+          <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-black flex items-center justify-center p-2">
+            <Image 
+              src="/Screenshot 2026-09-06 at 8.34.34 PM.jpg" 
+              alt="NASA JPL DSN Scheduling Machine Learning" 
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg p-1" 
+            />
           </div>
           <span className="text-[10px] font-bold uppercase tracking-wider text-purple-600 mb-1.5 block">Machine Learning &amp; LLM Automation</span>
           <h3 className="text-xl font-black text-slate-800 mb-2">DSN Schedule Deconfliction</h3>
@@ -576,7 +578,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
               src="/lensai-upload.png" 
               alt="Creative Lens AI UI" 
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg p-2" 
             />
           </div>
@@ -609,7 +611,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
               src="/tickertalk-input.png" 
               alt="Ticker Talk AI UI" 
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg p-2" 
             />
           </div>
@@ -672,16 +674,26 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
             </a>
           </div>
 
+          <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-8 overflow-hidden bg-black flex items-center justify-center">
+            <Image 
+              src="/Screenshot 2026-09-06 at 8.34.34 PM.jpg" 
+              alt="NASA JPL DSN Scheduling Presentation Title Slide" 
+              fill 
+              sizes="(max-width: 768px) 100vw, 800px" 
+              className="object-contain p-2" 
+            />
+          </div>
+
           <p className="text-slate-600 leading-relaxed mb-8 text-sm">
-            During my Machine Learning internship at NASA JPL, I developed an end-to-end intelligent decision-support system to resolve overbooking across the Deep Space Network (DSN). By analyzing 70+ weeks of historical schedules across phase transitions (BOP to NWS to PWS) and integrating the Onyx LLM API with internal JPL wikis, the solution generates automated recommendation reports with pattern cut insights and confidence metrics.
+            During my Machine Learning internship at NASA JPL, I developed an end-to-end intelligent decision-support system to resolve overbooking across the Deep Space Network (DSN)[cite: 1]. By analyzing 70+ weeks of historical schedules across phase transitions (BOP to NWS to PWS) and integrating the Onyx LLM API with internal JPL wikis, the solution generates automated recommendation reports with pattern cut insights and confidence metrics[cite: 1].
           </p>
 
           <div className="space-y-10">
             <div>
               <h3 className="text-lg font-bold text-slate-800 mb-3">1. The Bottleneck: Overbooked Antenna Tracks</h3>
               <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
-                <p>• DSN schedulers adjust <strong>600+ mission tracks weekly</strong> across 40+ missions (e.g., MRO, VGR1, MSL, STA).</p>
-                <p>• Schedulers generate initial requirements against empty schedules, creating heavy overlap that historically required intensive manual deconfliction.</p>
+                <p>• DSN schedulers adjust <strong>600+ mission tracks weekly</strong> across 40+ missions (e.g., MRO, VGR1, MSL, STA)[cite: 1].</p>
+                <p>• Schedulers generate initial requirements against empty schedules, creating heavy overlap that historically required intensive manual deconfliction[cite: 1].</p>
               </div>
             </div>
 
@@ -690,11 +702,11 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div className="p-4 rounded-xl border border-purple-100 bg-purple-50/40 space-y-1.5">
                   <span className="font-bold text-purple-900 block">Random Forest ML (300 Trees)</span>
-                  <p className="text-slate-600 leading-relaxed">Trained to predict track count, total time, and gap changes per transition. Offers complete explainability for schedulers while preventing overfitting on limited historical sets.</p>
+                  <p className="text-slate-600 leading-relaxed">Trained to predict track count, total time, and gap changes per transition[cite: 1]. Offers complete explainability for schedulers while preventing overfitting on limited historical sets[cite: 1].</p>
                 </div>
                 <div className="p-4 rounded-xl border border-sky-100 bg-sky-50/40 space-y-1.5">
                   <span className="font-bold text-sky-900 block">Onyx LLM Wiki Requirements Agent</span>
-                  <p className="text-slate-600 leading-relaxed">Built an agent querying the internal JPL scheduling Wiki to parse constraints into structured metrics, paired with a custom caching layer to eliminate repeat query latency.</p>
+                  <p className="text-slate-600 leading-relaxed">Built an agent querying the internal JPL scheduling Wiki to parse constraints into structured metrics, paired with a custom caching layer to eliminate repeat query latency[cite: 1].</p>
                 </div>
               </div>
             </div>
@@ -705,17 +717,17 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
                 <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
                   <div className="text-2xl font-black text-purple-600">79%</div>
                   <div className="text-[11px] font-bold text-slate-700 mt-1">Track Count</div>
-                  <div className="text-[10px] text-slate-500">Within ±1 track ($n=334/421$)</div>
+                  <div className="text-[10px] text-slate-500">Within ±1 track ($n=334/421$)[cite: 1]</div>
                 </div>
                 <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
                   <div className="text-2xl font-black text-sky-600">82%</div>
                   <div className="text-[11px] font-bold text-slate-700 mt-1">Total Time</div>
-                  <div className="text-[10px] text-slate-500">Within ±20% ($n=347/421$)</div>
+                  <div className="text-[10px] text-slate-500">Within ±20% ($n=347/421$)[cite: 1]</div>
                 </div>
                 <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
                   <div className="text-2xl font-black text-emerald-600">78%</div>
                   <div className="text-[11px] font-bold text-slate-700 mt-1">Mean Gap</div>
-                  <div className="text-[10px] text-slate-500">Within 6 hrs ($n=304/388$)</div>
+                  <div className="text-[10px] text-slate-500">Within 6 hrs ($n=304/388$)[cite: 1]</div>
                 </div>
               </div>
             </div>
