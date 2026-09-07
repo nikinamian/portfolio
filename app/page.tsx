@@ -542,15 +542,15 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
         <div>
           <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-black flex items-center justify-center p-2">
             <Image 
-              src="/jpl_project_cover.jpg" 
-              alt="NASA JPL DSN Scheduling Machine Learning" 
+              src="/jpl_cover_photo.jpg" 
+              alt="Machine Learning for DSN Scheduling Deconfliction @ NASA JPL" 
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-lg p-1" 
             />
           </div>
           <span className="text-[10px] font-bold uppercase tracking-wider text-purple-600 mb-1.5 block">Machine Learning &amp; LLM Automation</span>
-          <h3 className="text-xl font-black text-slate-800 mb-2">DSN Schedule Deconfliction</h3>
+          <h3 className="text-xl font-black text-slate-800 mb-2">DSN Schedule Deconfliction @ NASA JPL</h3>
           <p className="text-slate-600 text-xs leading-relaxed mb-5">
             Engineered Random Forest models and Onyx LLM pipelines over 70+ weeks of Deep Space Network scheduling logs to predict track counts, gaps, and pattern cuts across phase transitions.
           </p>
@@ -565,7 +565,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
             onClick={() => onSelectProject("dsn-ml")}
             className="w-full py-2.5 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-purple-200/70 cursor-pointer"
           >
-            Read More/Presentation <ArrowRight size={14} />
+            Read More / Presentation <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -661,7 +661,7 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
               <div className="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-200 mb-2">
                 NASA Jet Propulsion Laboratory (JPL) Internship Project
               </div>
-              <h2 className="text-2xl md:text-4xl font-black text-slate-800 mb-1.5">Machine Learning for DSN Scheduling Deconfliction</h2>
+              <h2 className="text-2xl md:text-4xl font-black text-slate-800 mb-1.5">Machine Learning for DSN Scheduling Deconfliction @ NASA JPL</h2>
               <p className="text-slate-500 text-sm font-medium">Predictive Decision Support &amp; NLP Extraction for the Deep Space Network</p>
             </div>
             <a 
@@ -676,7 +676,7 @@ function ProjectDetail({ projectId, onBack }: { projectId: "dsn-ml" | "lensai" |
 
           <div className="relative w-full h-72 md:h-96 rounded-xl border border-slate-200 shadow-xs mb-8 overflow-hidden bg-black flex items-center justify-center">
             <Image 
-              src="/Screenshot 2026-09-06 at 8.34.34 PM.jpg" 
+              src="/jpl_cover_photo.jpg" 
               alt="NASA JPL DSN Scheduling Presentation Title Slide" 
               fill 
               sizes="(max-width: 768px) 100vw, 800px" 
