@@ -542,7 +542,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
         <div>
           <div className="relative w-full h-40 mb-5 rounded-xl overflow-hidden border border-slate-100 bg-black flex items-center justify-center p-2">
             <Image 
-              src="/Screenshot 2026-09-06 at 8.34.34 PM.jpg" 
+              src="/jpl_project_cover.jpg" 
               alt="NASA JPL DSN Scheduling Machine Learning" 
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -565,7 +565,7 @@ function ProjectsSection({ onSelectProject }: { onSelectProject: (id: "dsn-ml" |
             onClick={() => onSelectProject("dsn-ml")}
             className="w-full py-2.5 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 border border-purple-200/70 cursor-pointer"
           >
-            Read More / Presentation <ArrowRight size={14} />
+            Read More/Presentation <ArrowRight size={14} />
           </button>
         </div>
       </div>
